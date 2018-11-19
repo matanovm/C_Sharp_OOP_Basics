@@ -7,7 +7,7 @@
     <ProjectGuid>{88B19A71-3CDB-4C6B-9BE0-D8885A476F35}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_01.Define_a_Class_Person</RootNamespace>
-    <AssemblyName>_01.Define_a_Class_Person</AssemblyName>
+    <AssemblyName>01.Define a Class Person</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartUP.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

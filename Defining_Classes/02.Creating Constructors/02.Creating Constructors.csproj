@@ -7,7 +7,7 @@
     <ProjectGuid>{BD7D82B8-7F89-4378-A877-EDD3BA59C643}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_02.Creating_Constructors</RootNamespace>
-    <AssemblyName>_02.Creating_Constructors</AssemblyName>
+    <AssemblyName>02.Creating Constructors</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartUp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

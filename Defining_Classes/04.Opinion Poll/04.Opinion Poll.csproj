@@ -7,7 +7,7 @@
     <ProjectGuid>{53518B25-2155-4A3F-8C92-35FDD9E83669}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_04.Opinion_Poll</RootNamespace>
-    <AssemblyName>_04.Opinion_Poll</AssemblyName>
+    <AssemblyName>04.Opinion Poll</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -7,7 +7,7 @@
     <ProjectGuid>{8A9B2A4D-32AF-4972-9BE1-CD5971514133}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_03.Oldest_Family_Member</RootNamespace>
-    <AssemblyName>_03.Oldest_Family_Member</AssemblyName>
+    <AssemblyName>03.Oldest Family Member</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

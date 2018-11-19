@@ -7,7 +7,7 @@
     <ProjectGuid>{EDA444AC-87BE-485C-A176-3BCA90B07C15}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_05.Date_Modifier</RootNamespace>
-    <AssemblyName>_05.Date_Modifier</AssemblyName>
+    <AssemblyName>05.Date Modifier</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
