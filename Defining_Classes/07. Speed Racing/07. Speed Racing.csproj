@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{53518B25-2155-4A3F-8C92-35FDD9E83669}</ProjectGuid>
+    <ProjectGuid>{D2C2416A-3ED8-44AD-8C97-9584C0AE3F2C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_04.Opinion_Poll</RootNamespace>
-    <AssemblyName>04.Opinion Poll</AssemblyName>
+    <RootNamespace>_07.Speed_Racing</RootNamespace>
+    <AssemblyName>_07.Speed_Racing</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Person.cs" />
+    <Compile Include="Car.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

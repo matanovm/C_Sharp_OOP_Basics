@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{53518B25-2155-4A3F-8C92-35FDD9E83669}</ProjectGuid>
+    <ProjectGuid>{FB22E0E8-7945-4A11-9FE0-32AFED02C2FD}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_04.Opinion_Poll</RootNamespace>
-    <AssemblyName>04.Opinion Poll</AssemblyName>
+    <RootNamespace>_09.Rectangle_Intesection</RootNamespace>
+    <AssemblyName>_09.Rectangle_Intesection</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Person.cs" />
+    <Compile Include="Rectangle.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

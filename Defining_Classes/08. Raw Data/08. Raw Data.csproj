@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{53518B25-2155-4A3F-8C92-35FDD9E83669}</ProjectGuid>
+    <ProjectGuid>{EC1A49A6-EB02-400A-8409-BCC86A447097}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_04.Opinion_Poll</RootNamespace>
-    <AssemblyName>04.Opinion Poll</AssemblyName>
+    <RootNamespace>_08.Raw_Data</RootNamespace>
+    <AssemblyName>_08.Raw_Data</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Person.cs" />
+    <Compile Include="Car.cs" />
+    <Compile Include="Cargo.cs" />
+    <Compile Include="Engine.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tire.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
