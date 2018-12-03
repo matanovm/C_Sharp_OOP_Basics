@@ -34,6 +34,12 @@
 			get { return this.salary; }
 		}
 
+		public string Position
+		{
+			get { return position; }
+			set { position = value; }
+		}
+
 		public string Department
 		{
 			get { return this.department; }

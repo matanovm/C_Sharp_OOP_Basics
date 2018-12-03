@@ -8,7 +8,7 @@ namespace _04.Opinion_Poll
 	{
 		static void Main(string[] args)
 		{
-			var people = GetPeople();
+			HashSet<Person> people = GetPeople();
 			PrintPeopleOlderThan30(people);
 		}
 
@@ -22,12 +22,14 @@ namespace _04.Opinion_Poll
 
 		private static HashSet<Person> GetPeople()
 		{
-			var people = new HashSet<Person>();
+			HashSet<Person> people = new HashSet<Person>();
 			var numberOfPeople = int.Parse(Console.ReadLine());
 
 			while (numberOfPeople > 0)
 			{
-				var personData = Console.ReadLine().Split();
+				string[] personData = Console.ReadLine().Split();
+				string name = personData[0];
+				int age = int.Parse(personData[1]);
 				people.Add(new Person(personData[0], int.Parse(personData[1])));
 
 				numberOfPeople--;

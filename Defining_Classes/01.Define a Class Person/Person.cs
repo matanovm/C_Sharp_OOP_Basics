@@ -5,6 +5,13 @@ namespace _01.Define_a_Class_Person
 	{
 		private string name;
 		private int age;
+		string NameAndAge;
+
+		private Person(string name, int age)
+		{
+			Name = name;
+			Age = age;
+		}
 
 		public string Name
 		{
@@ -16,6 +23,12 @@ namespace _01.Define_a_Class_Person
 			get { return age; }
 			set { age = value; }
 		}
+
+		public Person()
+		{
+			NameAndAge = name + age;
+		}
+
 		public string PrintNameAndAge()
 		{
 			return $"{this.name} {this.age}";

@@ -1,5 +1,4 @@
-﻿
-namespace _02.Creating_Constructors
+﻿namespace _02.Creating_Constructors
 {
 	class Person
 	{

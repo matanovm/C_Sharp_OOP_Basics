@@ -8,13 +8,13 @@ namespace _08.Raw_Data
 	{
 		public static void Main()
 		{
-			var cars = GetCars();
+		Queue<Car> cars = GetCars();
 			PrintCars(cars);
 		}
 
 		private static void PrintCars(Queue<Car> cars)
 		{
-			var command = Console.ReadLine();
+			string command = Console.ReadLine();
 
 			Console.WriteLine(string.Join(Environment.NewLine, cars
 						.Where(c => c.Cargo.Type == command && command == "fragile"
@@ -27,20 +27,18 @@ namespace _08.Raw_Data
 
 		private static Queue<Car> GetCars()
 		{
-			var cars = new Queue<Car>();
-			var numberOfCars = int.Parse(Console.ReadLine());
+			Queue<Car> cars = new Queue<Car>();
+			int numberOfCars = int.Parse(Console.ReadLine());
 
 			while (cars.Count < numberOfCars)
 			{
-				var input = Console.ReadLine().Split();
-
-				/*
-				 * Information about a car in the format:
-				 * “<Model> <EngineSpeed> <EnginePower> <CargoWeight> <CargoType> <Tire1Pressure> <Tire1Age> <Tire2Pressure> <Tire2Age> <Tire3Pressure> <Tire3Age> <Tire4Pressure> <Tire4Age>” 
-				 */
-				var engine = new Engine(int.Parse(input[1]), int.Parse(input[2]));
-				var cargo = new Cargo(int.Parse(input[3]), input[4]);
-				var tires = new Tire[]
+				string[] input = Console.ReadLine().Split();
+				
+				 //“<Model> <EngineSpeed> <EnginePower> <CargoWeight> <CargoType> <Tire1Pressure> <Tire1Age> <Tire2Pressure> <Tire2Age> <Tire3Pressure> <Tire3Age> <Tire4Pressure> <Tire4Age>” 
+				 
+				Engine engine = new Engine(int.Parse(input[1]), int.Parse(input[2]));
+				Cargo cargo = new Cargo(int.Parse(input[3]), input[4]);
+				Tire[] tires = new Tire[]
 				{
 					new Tire(int.Parse(input[6]), double.Parse(input[5])),
 					new Tire(int.Parse(input[8]), double.Parse(input[7])),
@@ -55,4 +53,4 @@ namespace _08.Raw_Data
 		}
 	}
 }
-}
+

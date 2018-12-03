@@ -8,9 +8,9 @@ namespace _09.Rectangle_Intesection
 	{
 		public static void Main()
 		{
-			var firstLine = Console.ReadLine().Split();
+			string[] firstLine = Console.ReadLine().Split();
 
-			var rectangles = SetRectangles(int.Parse(firstLine[0]));
+			Queue<Rectangle> rectangles = SetRectangles(int.Parse(firstLine[0]));
 			CheckIntersections(int.Parse(firstLine[1]), rectangles);
 		}
 
@@ -18,9 +18,9 @@ namespace _09.Rectangle_Intesection
 		{
 			while (numberOfIntersectionChecks > 0)
 			{
-				var pair = Console.ReadLine().Split();
-				var firstRect = rectangles.Where(r => r.Id == pair[0]).FirstOrDefault();
-				var secondRect = rectangles.Where(r => r.Id == pair[1]).FirstOrDefault();
+				string[] pair = Console.ReadLine().Split();
+				Rectangle firstRect = rectangles.Where(r => r.Id == pair[0]).FirstOrDefault();
+				Rectangle secondRect = rectangles.Where(r => r.Id == pair[1]).FirstOrDefault();
 
 				Console.WriteLine(firstRect.IsThereIntersection(secondRect) ? "true" : "false");
 
@@ -30,11 +30,11 @@ namespace _09.Rectangle_Intesection
 
 		private static Queue<Rectangle> SetRectangles(int numberOfRectangles)
 		{
-			var rectangles = new Queue<Rectangle>(numberOfRectangles);
+			Queue<Rectangle> rectangles = new Queue<Rectangle>(numberOfRectangles);
 
 			while (rectangles.Count < numberOfRectangles)
 			{
-				var input = Console.ReadLine().Split();
+				string[] input = Console.ReadLine().Split();
 				rectangles.Enqueue(new Rectangle(input[0], double.Parse(input[1]),
 					double.Parse(input[2]), double.Parse(input[3]), double.Parse(input[4])));
 			}

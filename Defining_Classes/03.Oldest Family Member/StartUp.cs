@@ -7,15 +7,9 @@
 	{
 		public static void Main()
 		{
-			MethodInfo oldestMemberMethod = typeof(Family).GetMethod("GetOldestMember");
-			MethodInfo addMemberMethod = typeof(Family).GetMethod("AddMember");
-			if (oldestMemberMethod == null || addMemberMethod == null)
-			{
-				throw new Exception();
-			}
 
-			var family = new Family();
-			var membersNumber = int.Parse(Console.ReadLine());
+			Family family = new Family();
+			int membersNumber = int.Parse(Console.ReadLine());
 
 			while (membersNumber > 0)
 			{
@@ -26,7 +20,7 @@
 				membersNumber--;
 			}
 
-			var oldestMember = family.GetOldestMember();
+			Person oldestMember = family.GetOldestMember();
 			Console.WriteLine($"{oldestMember.Name} {oldestMember.Age}");
 		}
 	}

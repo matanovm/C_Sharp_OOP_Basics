@@ -10,7 +10,7 @@ namespace _07.Speed_Racing
 
 		public static void Main()
 		{
-			var cars = GetCars();
+			Queue<Car> cars = GetCars();
 			DriveCars(cars);
 			PrintCars(cars);
 		}
@@ -23,11 +23,11 @@ namespace _07.Speed_Racing
 
 		private static void DriveCars(Queue<Car> cars)
 		{
-			var command = Console.ReadLine().Split();
+			string[] command = Console.ReadLine().Split();
 
 			while (command[0] != "End")
 			{
-				var currentCar = cars.Where(c => c.Model == command[1]).FirstOrDefault();
+				Car currentCar = cars.Where(c => c.Model == command[1]).FirstOrDefault();
 
 				if (currentCar != null)
 				{
@@ -40,12 +40,12 @@ namespace _07.Speed_Racing
 
 		private static Queue<Car> GetCars()
 		{
-			var cars = new Queue<Car>();
-			var numberOfCars = int.Parse(Console.ReadLine());
+			Queue<Car> cars = new Queue<Car>();
+			int numberOfCars = int.Parse(Console.ReadLine());
 
 			while (cars.Count < numberOfCars)
 			{
-				var input = Console.ReadLine().Split();
+				string[] input = Console.ReadLine().Split();
 				cars.Enqueue(new Car(input[0], double.Parse(input[1]), double.Parse(input[2])));
 			}
 

@@ -8,7 +8,7 @@ namespace _06.Company_Roster
 	{
 		static void Main(string[] args)
 		{
-			var employees = GetEmployees();
+			Stack<Employee> employees = GetEmployees();
 			PrintEmployeesWithHighestSalary(employees);
 		}
 
@@ -19,7 +19,7 @@ namespace _06.Company_Roster
 				return;
 			}
 
-			var highestAverageSalaryDepartment = employees
+			IGrouping<string,Employee> highestAverageSalaryDepartment = employees
 				.GroupBy(e => e.Department)
 				.OrderByDescending(g => g.Select(e => e.Salary).Sum())
 				.First();
@@ -32,8 +32,8 @@ namespace _06.Company_Roster
 
 		private static Stack<Employee> GetEmployees()
 		{
-			var employees = new Stack<Employee>();
-			var numberOfEmployees = int.Parse(Console.ReadLine());
+			Stack<Employee> employees = new Stack<Employee>();
+			int numberOfEmployees = int.Parse(Console.ReadLine());
 
 			while (employees.Count < numberOfEmployees)
 			{
