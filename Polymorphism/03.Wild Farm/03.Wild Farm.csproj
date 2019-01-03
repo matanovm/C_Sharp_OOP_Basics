@@ -7,7 +7,7 @@
     <ProjectGuid>{05969445-6FC1-4F86-8D10-4D5F560D9B32}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>_03.Wild_Farm</RootNamespace>
-    <AssemblyName>_03.Wild_Farm</AssemblyName>
+    <AssemblyName>03.Wild Farm</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,11 +43,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animals\Animal Type\Animal.cs" />
+    <Compile Include="Animals\Animal Type\Bird.cs" />
+    <Compile Include="Animals\Animal Type\Feline.cs" />
+    <Compile Include="Animals\Animal Type\Mammal.cs" />
+    <Compile Include="Animals\Cat.cs" />
+    <Compile Include="Animals\Dog.cs" />
+    <Compile Include="Animals\Hen.cs" />
+    <Compile Include="Animals\Mouse.cs" />
+    <Compile Include="Animals\Owl.cs" />
+    <Compile Include="Animals\Tiger.cs" />
+    <Compile Include="Food\Foods.cs" />
+    <Compile Include="Food\Fruit.cs" />
+    <Compile Include="Food\Meat.cs" />
+    <Compile Include="Food\Seeds.cs" />
+    <Compile Include="Food\Vegetable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
