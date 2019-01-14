@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic\DraftManager.cs" />
-    <Compile Include="BusinessLogic\HarvesterFactory.cs" />
     <Compile Include="Factories\HarvesterFactory.cs" />
     <Compile Include="Factories\ProviderFactory.cs" />
     <Compile Include="Program.cs" />

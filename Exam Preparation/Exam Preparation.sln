@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Structure", "Structure\Structure.csproj", "{3E9965AF-556B-457C-BAFA-DCC7B8605C1C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StorageMaster", "StorageMaster\StorageMaster\StorageMaster.csproj", "{549A7054-7E6F-4E7D-B601-CE227F1577A8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsAndCodeWizards", "DungeonsAndCodeWizards\DungeonsAndCodeWizards.csproj", "{3989DF9A-C398-4386-9EB0-A7C06687AA2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{3E9965AF-556B-457C-BAFA-DCC7B8605C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E9965AF-556B-457C-BAFA-DCC7B8605C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E9965AF-556B-457C-BAFA-DCC7B8605C1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{549A7054-7E6F-4E7D-B601-CE227F1577A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{549A7054-7E6F-4E7D-B601-CE227F1577A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{549A7054-7E6F-4E7D-B601-CE227F1577A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{549A7054-7E6F-4E7D-B601-CE227F1577A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3989DF9A-C398-4386-9EB0-A7C06687AA2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3989DF9A-C398-4386-9EB0-A7C06687AA2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3989DF9A-C398-4386-9EB0-A7C06687AA2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3989DF9A-C398-4386-9EB0-A7C06687AA2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

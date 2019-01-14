@@ -5,8 +5,6 @@ using Structure.Units.Provider;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Structure.BusinessLogic
 {
@@ -103,8 +101,8 @@ namespace Structure.BusinessLogic
 		public string Check(List<string> arguments)
 		{
 			string id = arguments[0];
-			// operator ?? check if left side have null if have get right side.
-			//But if left side do not have null get left side only and no check right side.
+			// check if left side have null if have get right side.
+			// if left side do not have null get left side only and no check right side.
 			Unit unit = (Unit)harvesters.FirstOrDefault(h => h.Id == id) ??
 				providers.FirstOrDefault(p => p.Id == id);
 
