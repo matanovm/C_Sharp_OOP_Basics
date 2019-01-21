@@ -1,49 +1,25 @@
 ﻿using System.Collections.Generic;
-using System;
-using System.Text;
 
 namespace _01.Raw_Data
 {
 	public class Car
 	{
-		private string model;
-		private Engine engine;
-		private Cargo cargo;
-		private List<Tire> tires;
+		public string Model { get; set; }
+		public int EngineSpeed { get; set; }
+		public int EnginePower { get; set; }
+		public int CargoWeight { get; set; }
+		public string CargoType { get; set; }
+		public KeyValuePair<double, int>[] Tires { get; set; }
 
-		public Car(string model, Engine engine, Cargo cargo, List<Tire> tires)
+		public Car(string model, int engineSpeed, int enginePower, int cargoWeight, string cargoType, double tire1Pressure, int tire1Age, double tire2Pressure, int tire2Age, double tire3Pressure, int tire3age, double tire4Pressure, int tire4age)
 		{
-			this.Model = model;
-			this.Engine = engine;
-			this.Cargo = cargo;
-			this.Tires = tires;
+			Model = model;
+			EngineSpeed = engineSpeed;
+			EnginePower = enginePower;
+			CargoWeight = cargoWeight;
+			CargoType = cargoType;
+			Tires = new KeyValuePair<double, int>[] { KeyValuePair.Create(tire1Pressure, tire1Age), KeyValuePair.Create(tire2Pressure, tire2Age), KeyValuePair.Create(tire3Pressure, tire3age), KeyValuePair.Create(tire4Pressure, tire4age) };
 		}
-
-		public List<Tire> Tires
-		{
-			get { return tires; }
-			private set { tires = value; }
-		}
-
-		public Cargo Cargo
-		{
-			get { return cargo; }
-			private set { cargo = value; }
-		}
-
-		public Engine Engine
-		{
-			get { return engine; }
-			private set { engine = value; }
-		}
-
-		public string Model
-		{
-			get { return model; }
-			private set { model = value; }
-		}
-
 	}
-
 }
 

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _02.Car_Salesman
 {
@@ -16,31 +14,31 @@ namespace _02.Car_Salesman
 
 			for (int i = 0; i < count; i++)
 			{
-				var tokens = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
-				string model = tokens[0];
-				int power = int.Parse(tokens[1]);
+				string[] parameter = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+				string model = parameter[0];
+				int power = int.Parse(parameter[1]);
 
-				if (tokens.Length == 2)
+				if (parameter.Length == 2)
 				{
 					engines.Add(new Engine(model, power));
 				}
-				else if (tokens.Length == 3)
+				else if (parameter.Length == 3)
 				{
-					if (tokens[2].All(Char.IsDigit))
+					if (parameter[2].All(Char.IsDigit))
 					{
-						int displacement = int.Parse(tokens[2]);
+						int displacement = int.Parse(parameter[2]);
 						engines.Add(new Engine(model, power, displacement));
 					}
 					else
 					{
-						string efficiency = tokens[2];
+						string efficiency = parameter[2];
 						engines.Add(new Engine(model, power, efficiency));
 					}
 				}
-				else if (tokens.Length == 4)
+				else if (parameter.Length == 4)
 				{
-					int displacement = int.Parse(tokens[2]);
-					string efficiency = tokens[3];
+					int displacement = int.Parse(parameter[2]);
+					string efficiency = parameter[3];
 
 					engines.Add(new Engine(model, power, displacement, efficiency));
 				}
@@ -50,34 +48,34 @@ namespace _02.Car_Salesman
 
 			for (int i = 0; i < count; i++)
 			{
-				var tokens = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+				string[] parameters = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-				string model = tokens[0];
-				Engine engine = engines.First(e => e.Model == tokens[1]);
+				string model = parameters[0];
+				Engine engine = engines.First(e => e.Model == parameters[1]);
 
-				if (tokens.Length == 2)
+				if (parameters.Length == 2)
 				{
 					cars.Add(new Car(model, engine));
 				}
-				else if (tokens.Length == 3)
+				else if (parameters.Length == 3)
 				{
-					if (tokens[2].All(Char.IsDigit))
+					if (parameters[2].All(Char.IsDigit))
 					{
-						int weight = int.Parse(tokens[2]);
+						int weight = int.Parse(parameters[2]);
 
 						cars.Add(new Car(model, engine, weight));
 					}
 					else
 					{
-						string color = tokens[2];
+						string color = parameters[2];
 
 						cars.Add(new Car(model, engine, color));
 					}
 				}
-				else if (tokens.Length == 4)
+				else if (parameters.Length == 4)
 				{
-					int weight = int.Parse(tokens[2]);
-					string color = tokens[3];
+					int weight = int.Parse(parameters[2]);
+					string color = parameters[3];
 
 					cars.Add(new Car(model, engine, weight, color));
 				}

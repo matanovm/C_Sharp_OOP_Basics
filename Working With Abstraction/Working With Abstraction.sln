@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_RawData", "netCore\01_RawData.csproj", "{FB078E1E-F1F3-4AB5-84C6-833F1F017E60}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_CarSalesman", "CarSalesman\02_CarSalesman.csproj", "{FCAB7ABE-8152-4524-ADB7-864547B515C5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_JedGalaxy", "JedGalaxy\03_JedGalaxy.csproj", "{CA93E94D-26E1-4DCD-914A-B30D0714AE5A}"
@@ -17,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06_Sneaking", "Sneaking\06_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07_FamilyTree", "FamilyTree\07_FamilyTree.csproj", "{ED6C4C30-E10F-47FB-AE52-02C83638688D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_.RawData", "01_.RawData\01_.RawData.csproj", "{ACF596E9-F25F-4A0A-A044-A1328F4CF011}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_RawData", "01_.RawData\01_RawData.csproj", "{ACF596E9-F25F-4A0A-A044-A1328F4CF011}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FB078E1E-F1F3-4AB5-84C6-833F1F017E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB078E1E-F1F3-4AB5-84C6-833F1F017E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB078E1E-F1F3-4AB5-84C6-833F1F017E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB078E1E-F1F3-4AB5-84C6-833F1F017E60}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FCAB7ABE-8152-4524-ADB7-864547B515C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FCAB7ABE-8152-4524-ADB7-864547B515C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCAB7ABE-8152-4524-ADB7-864547B515C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
