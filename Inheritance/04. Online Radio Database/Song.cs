@@ -1,92 +1,73 @@
-﻿
-using _04.OnlineRadioDatabase;
+﻿using System;
+using System.Text.RegularExpressions;
 
 namespace _04.Online_Radio_Database
 {
-	public class Song
+	class Song
 	{
-		private const int _ArtistMinLength = 3;
-		private const int _ArtistMaxLength = 20;
-		private const int _NameMinLength = 3;
-		private const int _NameMaxLength = 30;
-		private const int _MinutesMin = 0;
-		private const int _MinutesMax = 14;
-		private const int _SecondsMin = 0;
-		private const int _SecondsMax = 59;
+		public Artist Artist { get; set; }
 
-		private string _artistName;
-		private string _songName;
-		private int _minutes;
-		private int _seconds;
+		private string name;
 
-		public Song(string artist, string name, int minutes, int seconds)
+		public string Name
 		{
-			_artistName = artist;
-			_songName = name;
-			_minutes = minutes;
-			_seconds = seconds;
-		}
-
-		private string ArtistName
-		{
-			set
-			{
-				if (value.Length < _ArtistMinLength || value.Length > _ArtistMaxLength)
-				{
-					throw new InvalidArtistNameException(_ArtistMinLength, _ArtistMaxLength);
-				}
-
-				_artistName = value;
-			}
-		}
-
-		private string SongName
-		{
-			set
-			{
-				if (value.Length < _NameMinLength || value.Length > _NameMaxLength)
-				{
-					throw new InvalidSongNameException(_NameMinLength, _NameMaxLength);
-				}
-
-				_songName = value;
-			}
-		}
-
-		public int Minutes
-		{
-			get
-			{
-				return _minutes;
-			}
-
+			get { return this.name; }
 			private set
 			{
-				if (value < _MinutesMin || value > _MinutesMax)
+				if (value.Length < 3 || value.Length > 20)
 				{
-					throw new InvalidSongMinutesException(_MinutesMin, _MinutesMax);
+					throw new ArgumentException("Song name should be between 3 and 30 symbols.");
 				}
-
-				_minutes = value;
+				this.name = value;
 			}
 		}
 
-		public int Seconds
-		{
-			get
-			{
-				return this._seconds;
-			}
+		private string length;
 
+		public string Length
+		{
+			get { return this.length; }
 			private set
 			{
-				if (value < _SecondsMin || value > _SecondsMax)
+				string pattern = @"^\d+:\d+";
+				Regex rgx = new Regex(pattern);
+				if (!rgx.IsMatch(value))
 				{
-					throw new InvalidSongSecondsException(_SecondsMin, _SecondsMax);
+					throw new ArgumentException("Invalid song length.");
 				}
 
-				this._seconds = value;
+				var lenghtStringArr = value.Split(':');
+				var minutes = int.Parse(lenghtStringArr[0]);
+				var seconds = int.Parse(lenghtStringArr[1]);
+
+				if (minutes < 0 || minutes > 14)
+				{
+					throw new ArgumentException("Song minutes should be between 0 and 14.");
+				}
+				if (seconds < 0 || seconds > 59)
+				{
+					throw new ArgumentException("Song seconds should be between 0 and 59.");
+				}
+
+				this.length = value;
 			}
+		}
+
+		public Song(string name, Artist artist, string length)
+		{
+			Name = name;
+			Artist = artist;
+			Length = length;
+		}
+
+		public int GetMinutes()
+		{
+			return int.Parse(Length.Split(':')[0]);
+		}
+
+		public int GetSeconds()
+		{
+			return int.Parse(Length.Split(':')[1]);
 		}
 	}
 }

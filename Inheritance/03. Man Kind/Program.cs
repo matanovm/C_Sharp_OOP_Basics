@@ -4,33 +4,32 @@ using System;
 
 namespace _03.Mankind
 {
-	class Program
+	public class Program
 	{
 		static void Main(string[] args)
 		{
+			string[] studentData = Console.ReadLine().Split(' ');
+			string studentFirstName = studentData[0];
+			string studentLastName = studentData[1];
+			string studentFacultyNumber = studentData[2];
+
+			string[] workerData = Console.ReadLine().Split(' ');
+			string workerFirstName = workerData[0];
+			string workerLastName = workerData[1];
+			decimal workerWeekSalary = decimal.Parse(workerData[2]);
+			decimal workerWorkHoursPerDay = decimal.Parse(workerData[3]);
+
 			try
 			{
-				string[] studentInput = Console.ReadLine().Split();
-				string studentFirstName = studentInput[0];
-				string studentLastName = studentInput[1];
-				string facultyNumber = studentInput[2];
-
-				Student student = new Student(studentFirstName, studentLastName, facultyNumber);
-
-				string[] workerInput = Console.ReadLine().Split();
-				string workerFirstName = workerInput[0];
-				string workerLastName = workerInput[1];
-				decimal weekSalary = decimal.Parse(workerInput[2]);
-				double workHours = double.Parse(workerInput[3]);
-
-				Worker worker = new Worker(workerFirstName, workerLastName, weekSalary, workHours);
-
+				Student student = new Student(studentFirstName, studentLastName, studentFacultyNumber);
+				Worker worker = new Worker(workerFirstName, workerLastName, workerWeekSalary, workerWorkHoursPerDay);
 				Console.WriteLine(student);
+				Console.WriteLine();
 				Console.WriteLine(worker);
 			}
-			catch (ArgumentException e)
+			catch (Exception exception)
 			{
-				Console.WriteLine(e.Message);
+				Console.WriteLine(exception.Message);
 			}
 		}
 	}

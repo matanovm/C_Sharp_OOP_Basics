@@ -1,17 +1,46 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _03.Man_Kind
 {
-	public class Human
+	class Human
 	{
-		private const int LastNameMinLength = 3;
-		private const int FirstNameMinLength = 4;
 		private string firstName;
+
+		protected string FirstName
+		{
+			get { return this.firstName; }
+			set
+			{
+				if (!char.IsUpper(value[0]))
+				{
+					throw new ArgumentException("Expected upper case letter! Argument: firstName");
+				}
+				if (value.Length < 4)
+				{
+					throw new ArgumentException("Expected length at least 4 symbols! Argument: firstName");
+				}
+				this.firstName = value;
+			}
+		}
+
 		private string lastName;
+
+		protected string LastName
+		{
+			get { return this.lastName; }
+			set
+			{
+				if (!char.IsUpper(value[0]))
+				{
+					throw new ArgumentException("Expected upper case letter! Argument: lastName");
+				}
+				if (value.Length < 3)
+				{
+					throw new ArgumentException("Expected length at least 3 symbols! Argument: lastName");
+				}
+				this.lastName = value;
+			}
+		}
 
 		public Human(string firstName, string lastName)
 		{
@@ -19,50 +48,9 @@ namespace _03.Man_Kind
 			LastName = lastName;
 		}
 
-		public string FirstName
-		{
-			get { return firstName; }
-			set
-			{
-				if (char.IsLower(value[0]))
-				{
-					throw new ArgumentException($"Expected upper case letter! Argument: {nameof(firstName)}");
-				}
-
-				if (value.Length < FirstNameMinLength)
-				{
-					throw new ArgumentException($"Expected length at least {FirstNameMinLength} symbols! Argument: {nameof(firstName)}");
-				}
-
-				firstName = value;
-			}
-		}
-
-		public string LastName
-		{
-			get { return lastName; }
-			set
-			{
-				if (char.IsLower(value[0]))
-				{
-					throw new ArgumentException($"Expected upper case letter! Argument: {nameof(lastName)}");
-				}
-
-				if (value.Length < LastNameMinLength)
-				{
-					throw new ArgumentException($"Expected length at least {LastNameMinLength} symbols! Argument: {nameof(lastName)}");
-				}
-
-				lastName = value;
-			}
-		}
-
 		public override string ToString()
 		{
-			StringBuilder builder = new StringBuilder();
-			builder.AppendLine($"First Name: {firstName}").AppendLine($"Last Name: {lastName}");
-
-			return builder.ToString();
+			return $"First Name: {FirstName}\r\nLast Name: {LastName}";
 		}
 	}
 }

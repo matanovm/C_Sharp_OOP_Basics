@@ -1,91 +1,94 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace _02.Book_Shop
 {
-	public class Book
+	class Book
 	{
-		private string _title;
-		private string _author;
-		private double _price;
+		private string author;
 
-		public Book(string author, string title, double price)
+		protected string Author
 		{
-			Author = author;
-			Title = title;
-			Price = price;
+			get
+			{
+				return this.author;
+			}
+			set
+			{
+				bool containsDigit = false;
+
+				foreach (Char character in value)
+				{
+					if (char.IsDigit(character))
+					{
+						containsDigit = true;
+						break;
+					}
+				}
+
+				if (containsDigit)
+				{
+					throw new ArgumentException("Author not valid!");
+				}
+				this.author = value;
+			}
 		}
 
-		public string Title
+		private string title;
+
+		protected string Title
 		{
-			get { return _title; }
+			get
+			{
+				return this.title;
+			}
 			set
 			{
 				if (value.Length < 3)
 				{
 					throw new ArgumentException("Title not valid!");
 				}
-				_title = value;
+				this.title = value;
 			}
 		}
 
-		public string Author
+		private decimal price;
+
+		protected virtual decimal Price
 		{
-			get { return _author; }
-			set
+			get
 			{
-				string[] authorNames = value.Split();
-
-				if (authorNames.Length == 2 && char.IsDigit(authorNames[1][0]))
-				{
-					throw new ArgumentException("Author not valid!");
-				}
-
-				_author = value;
+				return this.price;
 			}
-		}
-
-		public virtual double Price
-		{
-			get { return _price; }
 			set
 			{
 				if (value <= 0)
 				{
 					throw new ArgumentException("Price not valid!");
 				}
-
-				_price = value;
+				this.price = value;
 			}
 		}
+
+		public Book(string author, string title, decimal price)
+		{
+			this.Author = author;
+			this.Title = title;
+			this.Price = price;
+		}
+
 
 		public override string ToString()
 		{
-			StringBuilder builder = new StringBuilder();
-			builder.AppendLine($"Type: {GetType().Name}")
-				.AppendLine($"Title: {Title}")
-				.AppendLine($"Author: {Author}")
-				.AppendLine($"Price: {Price:F2}");
+			StringBuilder resultBuilder = new StringBuilder();
+			resultBuilder.AppendLine($"Type: {this.GetType().Name}")
+				.AppendLine($"Title: {this.Title}")
+				.AppendLine($"Author: {this.Author}")
+				.AppendLine($"Price: {this.Price:f2}");
 
-			string result = builder.ToString().TrimEnd();
+			string result = resultBuilder.ToString().TrimEnd();
 			return result;
 		}
-	}
 
-	public class GoldenEditionBook : Book
-	{
-		public GoldenEditionBook(string author, string title, double price)
-			: base(author, title, price) { }
-
-		public override double Price
-		{
-			get
-			{
-				return base.Price * 1.3;
-			}
-		}
 	}
 }

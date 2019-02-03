@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _02.Book_Shop
 {
 	class Program
 	{
-		static void Main(string[] args)
+		static void Main()
 		{
-
 			try
 			{
 				string author = Console.ReadLine();
 				string title = Console.ReadLine();
-				double price = double.Parse(Console.ReadLine());
+				decimal price = decimal.Parse(Console.ReadLine());
 
 				Book book = new Book(author, title, price);
 				GoldenEditionBook goldenEditionBook = new GoldenEditionBook(author, title, price);
@@ -29,5 +24,4 @@ namespace _02.Book_Shop
 			}
 		}
 	}
-}
 }

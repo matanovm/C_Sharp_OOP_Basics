@@ -1,44 +1,49 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _03.Man_Kind
 {
-	public class Student : Human
+	class Student : Human
 	{
-		private const int FacNumMinLength = 5;
-		private const int FacNumMaxLength = 10;
 		private string facultyNumber;
 
-		public Student(string firstName, string lastName, string facultyNumber)
-			: base(firstName, lastName)
+		public string FacultyNumber
 		{
-			FacultyNumber = facultyNumber;
-		}
-
-		private string FacultyNumber
-		{
+			get { return this.facultyNumber; }
 			set
 			{
-				if (value.Length < FacNumMinLength || value.Length > FacNumMaxLength ||
-					!value.All(char.IsLetterOrDigit))
+				if (value.Length < 5 || value.Length > 10)
 				{
 					throw new ArgumentException("Invalid faculty number!");
 				}
 
-				facultyNumber = value;
+				bool isNotDigitOrLetter = false;
+
+				foreach (Char character in value)
+				{
+					if (!char.IsLetterOrDigit(character))
+					{
+						isNotDigitOrLetter = true;
+						break;
+					}
+				}
+
+				if (isNotDigitOrLetter)
+				{
+					throw new ArgumentException("Invalid faculty number!");
+				}
+
+				this.facultyNumber = value;
 			}
+		}
+
+		public Student(string firstName, string lastName, string facultyNumber) : base(firstName, lastName)
+		{
+			this.FacultyNumber = facultyNumber;
 		}
 
 		public override string ToString()
 		{
-			StringBuilder builder = new StringBuilder();
-
-			builder.Append(base.ToString()).AppendLine($"Faculty number: {facultyNumber}");
-
-			return builder.ToString();
+			return $"{base.ToString()}\r\nFaculty number: {FacultyNumber}";
 		}
 	}
 }

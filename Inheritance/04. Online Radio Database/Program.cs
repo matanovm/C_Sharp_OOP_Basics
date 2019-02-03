@@ -1,9 +1,5 @@
-﻿using _04.OnlineRadioDatabase;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _04.Online_Radio_Database
 {
@@ -11,65 +7,42 @@ namespace _04.Online_Radio_Database
 	{
 		static void Main(string[] args)
 		{
-			Stack<Song> songs = GetSongs();
-			PrintPlaylistSummary(songs);
-		}
+			int songCount = int.Parse(Console.ReadLine());
 
-		private static void PrintPlaylistSummary(Stack<Song> playlist)
-		{
-			Console.WriteLine($"Songs added: {playlist.Count}");
+			List<Song> songList = new List<Song>();
 
-			int totalSeconds = playlist.Select(s => s.Seconds).Sum();
-			int secondsToMinutes = totalSeconds / 60;
-			int seconds = totalSeconds % 60;
-			int totalMinutes = playlist.Select(s => s.Minutes).Sum() + secondsToMinutes;
-			int minutesToHours = totalMinutes / 60;
-			int minutes = totalMinutes % 60;
-			int hours = minutesToHours;
-			Console.WriteLine($"Playlist length: {hours}h {minutes}m {seconds}s");
-		}
-
-		private static Stack<Song> GetSongs()
-		{
-			int numberOfSongs = int.Parse(Console.ReadLine());
-			Stack<Song> songs = new Stack<Song>(numberOfSongs);
-
-			while (numberOfSongs > 0)
+			for (int i = 0; i < songCount; i++)
 			{
-				string[] songDetails = Console.ReadLine().Split(';');
+				string[] songData = Console.ReadLine().Split(';');
+				string artistName = songData[0];
+				string songName = songData[1];
+				string songLength = songData[2];
 
 				try
 				{
-					int indexOfMinuteSecondSeparation = songDetails[2].IndexOf(':');
-
-					if (songDetails.Length < 3 || indexOfMinuteSecondSeparation < 1 ||
-						indexOfMinuteSecondSeparation > songDetails[2].Length - 2)
-					{
-						throw new InvalidSongException();
-					}
-
-					string artist = songDetails[0];
-					string songName = songDetails[1];
-					int minutes = int.Parse(songDetails[2].Substring(0, indexOfMinuteSecondSeparation));
-					int seconds = int.Parse(songDetails[2].Substring(indexOfMinuteSecondSeparation + 1));
-					songs.Push(new Song(artist, songName, minutes, seconds));
+					Artist artist = new Artist(artistName);
+					Song newSong = new Song(songName, artist, songLength);
+					songList.Add(newSong);
 					Console.WriteLine("Song added.");
-				}
 
-				catch (InvalidSongException ise)
+				}
+				catch (Exception exception)
 				{
-					Console.WriteLine(ise.Message);
+					Console.WriteLine(exception.Message);
 				}
-
-				catch (FormatException)
-				{
-					Console.WriteLine("Invalid song length.");
-				}
-
-				numberOfSongs--;
 			}
 
-			return songs;
+			int totalSongSeconds = 0;
+			int totalSongMinutes = 0;
+			foreach (var song in songList)
+			{
+				totalSongMinutes += song.GetMinutes();
+				totalSongSeconds += song.GetSeconds();
+			}
+			var cumulativeSongsDuration = new TimeSpan(0, totalSongMinutes, totalSongSeconds);
+
+			Console.WriteLine($"Songs added: {songList.Count}");
+			Console.WriteLine($"Playlist length: {cumulativeSongsDuration.Hours}h {cumulativeSongsDuration.Minutes}m {cumulativeSongsDuration.Seconds}s");
 		}
 	}
 }
