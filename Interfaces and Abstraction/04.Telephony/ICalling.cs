@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _04.Telephony
+﻿namespace _04.Telephony
 {
-	public interface ICalling : IPhone
+	public interface ICalling : IBrowse
 	{
-		string Browse(string url);
+		string CallNumber(string number);
 	}
 }

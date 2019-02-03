@@ -1,31 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _03.Ferrari
+﻿namespace _03.Ferrari
 {
 	public class Ferrari : ICar
 	{
-		public Ferrari(string driver, string model)
-		{
-			Driver = driver;
-			Model = model;
-		}
-
-		public string Driver { get; private set; }
+		public string DriverName { get; private set; }
 
 		public string Model { get; private set; }
 
-		public string Brakes()
+		public Ferrari(string driverName)
 		{
-			return "/Brakes!/";
+			DriverName = driverName;
+			Model = "488-Spider";
 		}
 
-		public string Gas()
+		public string ApplyBrakes()
 		{
-			return "Zadu6avam sA!/";
+			return "Brakes!";
+		}
+
+		public string PushGasPedal()
+		{
+			return "Zadu6avam sA!";
+		}
+
+		public override string ToString()
+		{
+			return $"{Model}/{ApplyBrakes()}/{PushGasPedal()}/{DriverName}";
 		}
 	}
 }

@@ -1,34 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _04.Telephony
 {
 	class Program
 	{
-		public static void Main()
+		static void Main(string[] args)
 		{
-			Smartphone phone = new Smartphone("Smartphone");
+			Smartphone smartphone = new Smartphone(Console.ReadLine().Split(' '), Console.ReadLine().Split(' '));
 
-			TestPhone(phone);
-		}
-
-		private static void TestPhone(ICalling phone)
-		{
-			string[] numbersToCall = Console.ReadLine().Split();
-
-			foreach (string number in numbersToCall)
+			foreach (string number in smartphone.PhoneNumbersArray)
 			{
-				Console.WriteLine(phone.Call(number));
+				Console.WriteLine(smartphone.CallNumber(number));
 			}
 
-			string[] sitesToBrowse = Console.ReadLine().Split();
-
-			foreach (string site in sitesToBrowse)
+			foreach (string site in smartphone.SitesArray)
 			{
-				Console.WriteLine(phone.Call(site));
+				Console.WriteLine(smartphone.BrowseSite(site));
 			}
 		}
 	}

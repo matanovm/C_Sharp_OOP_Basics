@@ -1,64 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace _04.Telephony
 {
 
 	public class Smartphone : ICalling
 	{
-		public Smartphone(string model)
-		{
-			Model = model;
-		}
+		public string[] PhoneNumbersArray { get; private set; }
 
-		public string Model { get; private set; }
+		public string[] SitesArray { get; private set; }
 
-		public string Browse(string url)
+		public string CallNumber(string number)
 		{
-			if (IsUrlValid(url))
+
+			if (number.Any(c => !char.IsDigit(c)))
 			{
-				return $"Browsing: {url}!";
+				return "Invalid number!";
 			}
 
-			return "Invalid URL!";
+			return $"Calling... {number}";
 		}
 
-		public string Call(string phoneNumber)
+		public string BrowseSite(string site)
 		{
-			if (IsNumberValid(phoneNumber))
+			if (site.Any(c => char.IsDigit(c)))
 			{
-				return $"Calling... {phoneNumber}";
+				return "Invalid URL!";
 			}
 
-			return "Invalid number!";
+			return $"Browsing: {site}!";
 		}
 
-		private bool IsUrlValid(string url)
+		public Smartphone(string[] phoneNumbersArray, string[] sitesArray)
 		{
-			for (int i = 0; i < url.Length; i++)
-			{
-				if (char.IsDigit(url[i]))
-				{
-					return false;
-				}
-			}
-
-			return true;
-		}
-
-		private bool IsNumberValid(string phoneNumber)
-		{
-			for (int i = 0; i < phoneNumber.Length; i++)
-			{
-				if (!char.IsDigit(phoneNumber[i]))
-				{
-					return false;
-				}
-			}
-
-			return true;
+			PhoneNumbersArray = phoneNumbersArray;
+			SitesArray = sitesArray;
 		}
 	}
+}
